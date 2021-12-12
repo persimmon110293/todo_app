@@ -24,16 +24,16 @@
                 <td>{{ task.person_in_charge }}</td>
                 <td>
                     <router-link v-bind:to="{ name: 'task.show', params: { taskId: task.id } }">
-                        <button class="btn btn-primary">Show</button>
+                        <ShowButtonComponent />
                     </router-link>
                 </td>
                 <td>
                     <router-link v-bind:to="{ name: 'task.edit', params: { taskId: task.id } }">
-                        <button class="btn btn-success">Edit</button>
+                        <EditButtonComponent />
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="taskDelete(task.id)">Delete</button>
+                    <DeleteDialogComponent />
                 </td>
             </tr>
             </tbody>
@@ -78,10 +78,10 @@ export default {
     mounted() {
         this.getTasks();
     },
-    // components: {
-    //     DeleteDialogComponent,
-    //     ShowButtonComponent,
-    //     EditButtonComponent,
-    // }
+    components: {
+        DeleteDialogComponent,
+        ShowButtonComponent,
+        EditButtonComponent,
+    }
 }
 </script>
