@@ -30,14 +30,17 @@ export default {
             dialog: false
         }
     },
+    // props: {
+    //     dialog: {
+    //         type: Boolean,
+    //         default: false,
+    //     }
+    // },
     methods: {
         confirm() {
+            this.dialog = false
             this.$emit('confirm-event')
         },
-        // confirm() {
-        //     alert('確認しました')
-        //     this.dialog = false
-        // },
     },
 }
 </script>
