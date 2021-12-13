@@ -33,7 +33,7 @@
                     </router-link>
                 </td>
                 <td>
-                    <DeleteDialogComponent />
+                    <DeleteDialogComponent @confirm-event="taskDelete(task.id)" />
                 </td>
             </tr>
             </tbody>
@@ -51,7 +51,6 @@ export default {
         return {
             tasks: [],
             loading: true,
-            dialog: false
         };
     },
     methods: {

@@ -25,17 +25,19 @@
 
 <script>
 export default {
-    props: {
-        dialog: {
-            type: Boolean,
-            default: false
+    data() {
+        return {
+            dialog: false
         }
     },
     methods: {
         confirm() {
-        alert('確認しました')
-        this.dialog = false
+            this.$emit('confirm-event')
         },
+        // confirm() {
+        //     alert('確認しました')
+        //     this.dialog = false
+        // },
     },
 }
 </script>
