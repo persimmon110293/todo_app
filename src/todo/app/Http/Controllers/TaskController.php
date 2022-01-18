@@ -7,9 +7,13 @@ use App\Task;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Task::all();
+        $page = $request->page;
+        return Task::offset(($page - 1) * 10)
+                    ->limit(10)
+                    ->orderBy('id')
+                    ->get();
     }
 
     public function show(Task $task)
